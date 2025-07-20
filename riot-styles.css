@@ -1,0 +1,307 @@
+/* Estilos para integração com Riot API */
+
+.riot-data-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.riot-player-card {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(200, 155, 60, 0.6);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.player-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(200, 155, 60, 0.3);
+}
+
+.profile-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    border: 2px solid rgba(200, 155, 60, 0.8);
+    margin-right: 15px;
+}
+
+.player-info h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #c89b3c;
+    font-weight: bold;
+}
+
+.player-info p {
+    margin: 5px 0 0 0;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.ranked-info {
+    margin-bottom: 20px;
+}
+
+.ranked-info h4 {
+    margin: 0 0 10px 0;
+    color: #c89b3c;
+    font-size: 1.2rem;
+}
+
+.rank-queue {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border-left: 3px solid #c89b3c;
+}
+
+.rank-queue p {
+    margin: 2px 0;
+    font-size: 0.9rem;
+}
+
+.mastery-info h4 {
+    margin: 0 0 15px 0;
+    color: #c89b3c;
+    font-size: 1.2rem;
+}
+
+.champions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.champion-mastery {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.champion-mastery:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.champion-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    border: 2px solid rgba(200, 155, 60, 0.6);
+    margin-right: 12px;
+}
+
+.mastery-details {
+    flex: 1;
+}
+
+.champion-name {
+    margin: 0 0 4px 0;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #c89b3c;
+}
+
+.mastery-level {
+    margin: 0 0 2px 0;
+    font-size: 0.85rem;
+    color: #90ee90;
+}
+
+.mastery-points {
+    margin: 0;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+}
+
+.spinner {
+    border: 4px solid rgba(200, 155, 60, 0.3);
+    border-left: 4px solid #c89b3c;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Error Message */
+.error-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(220, 53, 69, 0.95);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.error-message button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.error-message button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Formulário de configuração da API */
+.riot-config {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(200, 155, 60, 0.6);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    z-index: 1000;
+    min-width: 300px;
+}
+
+.riot-config h3 {
+    margin: 0 0 15px 0;
+    color: #c89b3c;
+    font-size: 1.3rem;
+}
+
+.riot-config input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(200, 155, 60, 0.6);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.riot-config input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.riot-config input:focus {
+    outline: none;
+    border-color: #c89b3c;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.riot-config button {
+    background: linear-gradient(45deg, #c89b3c, #f0e6d2);
+    color: #0f1419;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.riot-config button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(200, 155, 60, 0.4);
+}
+
+.riot-config button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.riot-config .status {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.riot-config .status.success {
+    background: rgba(40, 167, 69, 0.2);
+    border: 1px solid rgba(40, 167, 69, 0.6);
+    color: #90ee90;
+}
+
+.riot-config .status.error {
+    background: rgba(220, 53, 69, 0.2);
+    border: 1px solid rgba(220, 53, 69, 0.6);
+    color: #ff6b6b;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+    .riot-data-container {
+        position: static;
+        max-width: 100%;
+        margin: 20px;
+        max-height: none;
+    }
+    
+    .riot-config {
+        position: static;
+        margin: 20px;
+        min-width: auto;
+    }
+    
+    .champion-mastery {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .champion-img {
+        margin: 0 0 10px 0;
+    }
+}
