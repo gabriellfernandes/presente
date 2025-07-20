@@ -38,10 +38,12 @@ async function loadRiotData() {
     try {
         console.log('🎮 Carregando dados do League of Legends...');
 
-        const riotAPI = new RiotAPI(API_KEY);
-        const topChampions = await riotAPI.getTopChampions(RIOT_ID);
-
-        updateChampionsWithRiotData(topChampions);
+        updateChampionsWithRiotData([
+            { name: 'Yuumi' },
+            { name: 'Soraka' },
+            { name: 'Sona' },
+            { name: 'Lulu' }
+        ]);
 
         console.log('✅ Dados carregados com sucesso!');
 
